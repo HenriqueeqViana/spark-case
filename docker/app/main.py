@@ -26,6 +26,8 @@ if __name__ == "__main__":
         .config("spark.hadoop.fs.s3a.secret.key", "minio123") \
         .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem") \
         .config("spark.hadoop.fs.s3a.path.style.access", "true") \
+        .config("spark.metrics.conf", "/opt/spark/conf/metrics.properties") \
+        .config("spark.metrics.namespace", "sparkApp") \
         .config("spark.log.level", "INFO") \
         .getOrCreate()
     business_days_udf =spark.udf.register("business_days_udf", calculate_business_days, IntegerType())
