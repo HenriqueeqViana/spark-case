@@ -1,6 +1,6 @@
 # Spark ETL Project with Docker
 
-This project sets up a **Spark** standalone cluster using **Docker** and performs ETL operations on CSV files, leveraging **MinIO** for storage and **Dataflint** for data quality monitoring. The project uses **PySpark**, **Ganglia**, and **Spark UI** for analyzing and monitoring Spark jobs.
+This project sets up a Spark standalone cluster using Docker and performs ETL operations on CSV files. The solution includes data transformations and analytical queries using PySpark for distributed processing.jobs.
 
 ## Project Structure
 
@@ -8,13 +8,12 @@ This project sets up a **Spark** standalone cluster using **Docker** and perform
   - `main.py` - Orchestrates the execution of the pipeline.
   - `extract.py` - Handles data extraction from CSV files.
   - `transform.py` - Handles data transformations.
-  - `load.py` - Loads the transformed data into Delta Lake (MinIO).
+  - `load.py` - Loads the transformed data into local/Delta Lake (MinIO).
   - `analyse.py` - Contains the queries to answer the analysis questions.
-  - `utils.py` - Contains utility functions and UDFs (e.g., for calculating business days).
+  - `utils.py` - Contains utility libraries
   
 - `Dockerfile` - Sets up the Spark container.
 - `docker-compose.yml` - Orchestrates the services (Spark, Ganglia, MinIO, Dataflint).
-- `spark-defaults.conf` - Configures Spark settings and integrations (MinIO, Dataflint).
 - `.gitignore` - Git ignore file to avoid committing unnecessary files.
 
 ## Prerequisites
