@@ -11,6 +11,7 @@ graph TD
     B --> C[Transform]
     C --> D[Load to Delta]
     D --> E[Analytical Queries]
+```
 
 - `app/` - Contains all the Python scripts:
   - `main.py` - Orchestrates the execution of the pipeline.
@@ -23,7 +24,7 @@ graph TD
 - `Dockerfile` - Sets up the Spark container.
 - `docker-compose.yml` - Orchestrates the services (Spark, SparkUI, MinIO).
 - `.gitignore` - Git ignore file to avoid committing unnecessary files.
-```
+
 ## Data Model Structure
 
 ### Tables and Keys
@@ -83,6 +84,7 @@ erDiagram
     raw_sales_order_detail }|--|| store_orders : "Transforms into"
     raw_products }|--|| store_products : "Transforms into"
 ```
+
 ## Prerequisites
 
 Make sure you have the following tools installed on your machine:
@@ -125,7 +127,6 @@ Make sure you have the following tools installed on your machine:
 - **Spark UI**:
   - Access the Spark UI at `http://localhost:8080`.
 
-
 ## Data Quality Monitoring(on going)
 
 Dataflint is integrated into the Spark job. It will monitor the quality of the data processed through the pipeline. You can access the **Dataflint UI** at `http://localhost:8888` to see the data quality status and configure alerts.
@@ -162,5 +163,5 @@ docker-compose down
 | Components       | 5.67                 |
 
 ## Reference 
-[Spark Documentation](https://spark.apache.org/docs/3.5.3/index.html)
+[Spark Documentation](https://spark.apache.org/docs/3.5.3/index.html)  
 [Setting up a Spark Standalone Cluster on Docker](https://medium.com/@MarinAgli1/setting-up-a-spark-standalone-cluster-on-docker-in-layman-terms-8cbdc9fdd14b)
